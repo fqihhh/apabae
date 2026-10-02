@@ -1,1 +1,205 @@
-@import 'tailwindcss';
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 220px;
+  background-color: #ffffff;
+  border-right: 1px solid #ccc;
+  padding: 25px 15px;
+}
+
+.sidebar h2 {
+  margin: 0 0 30px;
+  font-size: 22px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sidebar nav a {
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.sidebar nav a:hover {
+  background-color: #eeeeee;
+}
+
+/* MAIN */
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+}
+
+.page {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.page h1 {
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #666;
+  margin-top: 0;
+}
+
+/* HOME */
+
+.home-box {
+  margin-top: 30px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  border-radius: 5px;
+}
+
+.button {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 9px 15px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+/* BOOKS */
+
+.book-grid {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.book-card {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.book-card h3 {
+  margin-bottom: 10px;
+}
+
+.book-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.book-cover {
+  height: 170px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  border: 1px solid #ccc;
+}
+
+/* DETAIL */
+
+.detail-box {
+  margin-top: 25px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  display: flex;
+  gap: 25px;
+}
+
+.detail-cover {
+  width: 200px;
+  height: 270px;
+  background-color: #ddd;
+  border: 1px solid #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+}
+
+/* FAVORITES */
+
+.empty-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 30px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+/* HELP */
+
+.help-box {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+@media (max-width: 800px) {
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .layout {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-box {
+    flex-direction: column;
+  }
+}
